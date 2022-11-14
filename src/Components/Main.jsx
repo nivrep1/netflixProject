@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import requests from "../Requests";
+
 const Main = () => {
   const [movies, setMovies] = useState([]);
     //Main page Random Image Generator
@@ -12,6 +13,7 @@ const Main = () => {
       setMovies(response.data.results);
     });
   }, []);
+  
   console.log(movie);
   return (
     <div className="w-full h-[550px] text-white">
