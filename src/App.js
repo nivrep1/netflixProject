@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+import Header from "./Components/Header";
+
 //Pages Routing
 import Home from "./Pages/Home";
 import TvShows from "./Pages/tvShows";
@@ -9,7 +10,7 @@ import MyList from "./Pages/MyList";
 function App() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tvShows" element={<TvShows />} />

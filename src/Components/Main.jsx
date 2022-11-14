@@ -2,23 +2,38 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import requests from "../Requests";
 
+
+
 const Main = () => {
   const [movies, setMovies] = useState([]);
-    //Main page Random Image Generator
+  //Main page Random Image Generator
   const movie = movies[Math.floor(Math.random() * movies.length)];
 
-//  Taking films and series from api
+  //  Taking films and series from api
   useEffect(() => {
     axios.get(requests.requestPopular).then((response) => {
       setMovies(response.data.results);
     });
   }, []);
-  
-  console.log(movie);
+
+  // const dots = (str)=>{
+  //   return str;
+  //   console.log("Hello");
+  // }
+
+  // TrunCate Text
+  const trunCateString = (str, num) => {
+    if (str?.length > num) {
+      return str.slice(0, num) + "...";
+    } else {
+      return str;
+    }
+  };
+
   return (
     <div className="w-full h-[550px] text-white">
       <div className="w-full h-full">
-      {/* Gradient Background Image */}
+        {/* Gradient Background Image */}
         <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
         {/* Main Page Random Film Images */}
         <img
@@ -40,8 +55,10 @@ const Main = () => {
           <p className="text-gray-400 text-sm">
             Released:{movie?.release_date}
           </p>
-          
-          <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">{movie?.overview}</p>
+
+          <p onClick={()=>{trunCateString(movie.overview)}} className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
+            {trunCateString(movie?.overview, 20)}
+          </p>
         </div>
       </div>
     </div>
