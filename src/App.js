@@ -10,14 +10,16 @@ import MyList from "./Pages/MyList";
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tvShows" element={<TvShows />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/newPopular" element={<NewPopular />} />
-        <Route path="/myList" element={<MyList />} />
-      </Routes>
+      <div className="relative h-screen  lg:h-[140vh]">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tvShows" element={<TvShows />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/newPopular" element={<NewPopular />} />
+          <Route path="/myList" element={<MyList />} />
+        </Routes>
+      </div>
     </>
   );
 }
