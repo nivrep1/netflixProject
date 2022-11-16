@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./Components/Header";
+import Head from "./Components/Header/Head";
 
 //Pages Routing
 import Home from "./Pages/Home";
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div className="relative h-screen  lg:h-[140vh]">
-        <Header />
+        <Head />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tvShows" element={<TvShows />} />
