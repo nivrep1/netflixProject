@@ -28,11 +28,11 @@ const Head = () => {
       }`}
     >
       <div className="flex item-center justify-between p-6 w-full absolute z-[100]">
-        <Logo />
-        <Navbar />
-        <div>
-          <Search />
+        <div className="flex">
+          <Logo />
+          <Navbar />
         </div>
+        <Search />
       </div>
     </header>
   );

@@ -6,7 +6,7 @@ const logo = () => {
     <div>
       <Link to="/">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
           alt="Netflix"
           width={100}
           height={25}
