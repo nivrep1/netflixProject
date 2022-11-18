@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="ml-8">
       <ul className="hidden space-x-6 md:flex">
         <li className="headerLink cursor-default font-semibold text-white hover:text-white ">
           <Link to="/">Home</Link>

@@ -11,7 +11,7 @@ const Home = () => {
   //  Taking films and series from api
   useEffect(() => {
     axios
-      .get(requests.requestTrendAllWeek, {
+      .get(requests.requestDiscover, {
         params: {
           api_key: "5873e06f4a42d7c901d515b672defd63",
           language: "en-US",
@@ -54,7 +54,7 @@ const Home = () => {
           </p>
 
           <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
-            {trunCateString(movie?.overview, 110)}
+            {trunCateString(movie?.overview, 200)}
           </p>
         </div>
       </div>
