@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Navbar.css";
+import "../../styles/Header/navbar.scss";
 
 const Navbar = () => {
   return (
-    <div className="ml-8">
-      <ul className="hidden space-x-6 md:flex">
-        <li className="headerLink cursor-default text-white hover:text-white ">
+    <div className="nav">
+      <ul>
+        <li className="headerLink ">
           <Link to="/">Home</Link>
         </li>
         <li className="headerLink">
