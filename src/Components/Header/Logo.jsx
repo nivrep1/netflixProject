@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const logo = () => {
+const logo = ({onClick}) => {
   return (
-    <div>
+    <div onClick={onClick}>
       <Link to="/">
         <img
           src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"

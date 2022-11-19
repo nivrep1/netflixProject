@@ -7,6 +7,10 @@ const Head = () => {
   //Header Fixed
   const [IsScrolled, setIsScrolled] = useState(false);
 
+  const refreshPage= ()=>{
+    window.location.reload(false)
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -29,7 +33,7 @@ const Head = () => {
     >
       <div className="flex item-center justify-between p-6 w-full absolute z-[100]">
         <div className="flex">
-          <Logo />
+          <Logo onClick={refreshPage}/>
           <Navbar />
         </div>
         <Search />
