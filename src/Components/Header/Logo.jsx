@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/Header/logo.scss";
 
-const logo = ({onClick}) => {
+const logo = ({ onClick }) => {
   return (
-    <div onClick={onClick}>
+    <div className="net" onClick={onClick}>
       <Link to="/">
         <img
           src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
           alt="Netflix"
-          width={100}
-          height={25}
-          className="cursor-pointer object-contain text-4xl mx-4"
+          width={110}
+          height={100}
         />
       </Link>
     </div>

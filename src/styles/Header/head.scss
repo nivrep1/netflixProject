@@ -1,0 +1,18 @@
+header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 5rem;
+  z-index: 100;
+  transition: 0.4s;
+  .container {
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      .lobar {
+        display: flex;
+      }
+    }
+  }
+}

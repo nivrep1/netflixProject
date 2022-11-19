@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 import Search from "./Search";
+import "../../styles/Header/head.scss";
 
 const Head = () => {
   //Header Fixed
   const [IsScrolled, setIsScrolled] = useState(false);
 
-  const refreshPage= ()=>{
-    window.location.reload(false)
-  }
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,17 +27,15 @@ const Head = () => {
   }, []);
 
   return (
-    <header
-      className={`${
-        IsScrolled && "bg-[#141414] fixed inset-x-0 top-0 left-0 z-[100] h-20"
-      }`}
-    >
-      <div className="flex item-center justify-between p-6 w-full absolute z-[100]">
-        <div className="flex">
-          <Logo onClick={refreshPage}/>
-          <Navbar />
+    <header className={`${IsScrolled && "bg-[#141414]"}`}>
+      <div className="container">
+        <div className="nav">
+          <div className="lobar">
+            <Logo onClick={refreshPage} />
+            <Navbar />
+          </div>
+          <Search />
         </div>
-        <Search />
       </div>
     </header>
   );

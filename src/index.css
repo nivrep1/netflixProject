@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-
+/*Tailwind*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,4 +14,10 @@ body {
   .headerLink {
     @apply cursor-pointer text-base text-lg text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
   }
+}
+/*Container*/
+.container {
+  max-width: 100%;
+  width: 1275px;
+  margin: 0 auto;
 }
