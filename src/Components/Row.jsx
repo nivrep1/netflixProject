@@ -1,44 +1,51 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, Zoom } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/scss/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "../../src/index.css";
+// import "../../src/index.css";
+import "../styles/Row.scss";
 
 const Row = ({ title, fetchURL }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios.get(fetchURL).then((response) => {
-      setMovies(response.data.results);
-    });
+    axios
+      .get(fetchURL, {
+        params: {
+          page: 1,
+        },
+      })
+      .then((response) => {
+        setMovies(
+          response.data.results.filter((item) => item.backdrop_path != null)
+        );
+      });
   }, [fetchURL]);
   return (
     <>
       <div className="container">
-        <h2 className="text-white font-bold md:text-xl p-2  ">{title}</h2>
-        <div className="relative flex  items-center w-full">
+        <h2 className=" md:text-xl p-2 pt-10  ">{title}</h2>
+        <div className="slide">
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation, Pagination, Scrollbar, A11y,]}
             spaceBetween={5}
             slidesPerView={5}
-            loop={true}
+            loop={false}
             navigation={{ clickable: true }}
             scrollbar={{ draggable: true }}
           >
-            {movies.map((item, id) => (
-              <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2 ">
-                <SwiperSlide>
-                  <img
-                    className="rounded w-full h-auto block"
-                    src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
-                    alt={item?.title}
-                  />
-                </SwiperSlide>
-              </div>
+            {movies.map((item) => (
+              <SwiperSlide key={item.id}>
+                <img
+                  className="row_picture"
+                  src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+                  alt={item?.title}
+                />
+              </SwiperSlide>
             ))}
           </Swiper>
         </div>

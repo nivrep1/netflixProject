@@ -1,0 +1,29 @@
+.right {
+  display: flex;
+  align-items: center;
+  .icon {
+    margin: 0px 12px;
+    color: white;
+    cursor: pointer;
+  }
+  .profile {
+    .options {
+      display: none;
+      background-color: #151515;
+      border-radius: 5px;
+      box-shadow: -3px 8px 17px 0px rgba(0, 0, 0, 0.75);
+    }
+    span {
+      padding: 10px;
+      cursor: pointer;
+    }
+    &:hover {
+      .options {
+        display: flex;
+        color: white;
+        flex-direction: column;
+        position: absolute;
+      }
+    }
+  }
+}
