@@ -35,6 +35,7 @@ const Head = () => {
             <Navbar />
           </div>
           <Search />
+          
         </div>
       </div>
     </header>
