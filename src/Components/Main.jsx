@@ -40,7 +40,7 @@ const Home = () => {
 
       {/* Main Page Random Film Images */}
       <img
-        className
+        className="main-picture"
         src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
         alt={movie?.title}
       />

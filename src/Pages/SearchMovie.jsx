@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import axios from "axios";
-import requests from "../Requests";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/css";
@@ -10,17 +8,18 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "../../src/index.css";
 import "../styles/Row.scss";
-
+import "../styles/PageSearch.scss";
 const SearchMovie = () => {
-  const title = useSelector((state) => state.searchValue.title);
+  // const title = useSelector((state) => state.searchValue.title);
   const movies = useSelector((state) => state.searchValue.movies);
 
   console.log("==@@@=> ", movies);
 
   return (
     <div className="main">
-      <div className="container">
-        <h2 className=" md:text-xl p-2 pt-10  ">Search Movie</h2>
+    <div className="search-page">
+    <div className="container">
+        {/* <h2 className=" md:text-xl p-2 pt-10  ">Search Movie</h2> */}
 
         <div className="slide">
           <Swiper
@@ -43,6 +42,8 @@ const SearchMovie = () => {
           </Swiper>
         </div>
       </div>
+    </div>
+     
     </div>
   );
 };
