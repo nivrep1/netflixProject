@@ -10,10 +10,11 @@
     display: flex;
     align-items: center;
     width: 100%;
-    img {
+    
+    .row-picture {
       width: 100%;
       display: block;
-      // height: auto;
+      // height: 100vh;
       border-radius: 0.25rem;
     }
   }
