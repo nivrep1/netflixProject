@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
-import Search from "./Search";
+import Search from "./SearchBox";
 import "../../styles/Header/head.scss";
 
-const Head = () => {
-  //Header Fixed
+const Head = (queryValue) => {
   const [IsScrolled, setIsScrolled] = useState(false);
 
   const refreshPage = () => {
@@ -34,7 +33,8 @@ const Head = () => {
             <Logo onClick={refreshPage} />
             <Navbar />
           </div>
-          <Search />
+          <Search /> 
+
           
         </div>
       </div>

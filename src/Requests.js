@@ -11,8 +11,9 @@ const requests = {
   requestTvAiringToday: `${host}/3/tv/airing_today?&page=10`,
   requestTvTopRated: `${host}/3/tv/top_rated?&page=12`,
   requestNetflixOriginals: `${host}/3/discover/tv?&page=15`,
-  requestSearch: `${host}/3/search/movie?&page=19`,
+  requestSearch: `${host}/3/search/multi`,
 };
+
 
 // requestPopular: `https://api.themoviedb.org/3/movie/popular?&language=en-US&page=1`,
 export default requests;

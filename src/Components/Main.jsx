@@ -15,7 +15,8 @@ const Home = () => {
     axios
       .get(requests.requestPopular, {
         params: {
-          page: 1,
+          page: 5,
+          include_adult: false,
         },
       })
       .then((response) => {
@@ -39,16 +40,20 @@ const Home = () => {
 
       {/* Main Page Random Film Images */}
       <img
+        className
         src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
         alt={movie?.title}
       />
-
       {/*Movie Description && Buttons(Home page)  */}
       <div className="description  md:p-8">
-        <h1 className="text-3xl md:text-5xl font-bold">
+        {/* <img
+          src={`https://image.tmdb.org/t/p/original/${item?.logo_path}`}
+          alt="vndhv"
+        /> */}
+        <h2 className="text-3xl w-6/12 md:text-5xl font-bold">
           {movie?.title}
           {movie?.name}
-        </h1>
+        </h2>
         <div className="my-4"></div>
 
         <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">

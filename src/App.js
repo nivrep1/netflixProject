@@ -7,18 +7,21 @@ import TvShows from "./Pages/tvShows";
 import Movies from "./Pages/Movies";
 import NewPopular from "./Pages/NewPopular";
 import MyList from "./Pages/MyList";
+import SearchMovie from "./Pages/SearchMovie";
 
 function App() {
   return (
     <>
       <div className="relative h-screen  lg:h-[140vh]">
         <Head />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/tvShows" element={<TvShows />} />
           <Route path="/newPopular" element={<NewPopular />} />
           <Route path="/myList" element={<MyList />} />
+          <Route path="/search" element={<SearchMovie />} />
         </Routes>
       </div>
     </>

@@ -1,5 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import requests from "../Requests";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/css";
@@ -9,28 +11,17 @@ import "swiper/css/scrollbar";
 import "../../src/index.css";
 import "../styles/Row.scss";
 
-const Row = ({ title, fetchURL }) => {
-  const [movies, setMovies] = useState([]);
+const SearchMovie = () => {
+  const title = useSelector((state) => state.searchValue.title);
+  const movies = useSelector((state) => state.searchValue.movies);
 
-  useEffect(() => {
-    axios
-      .get(fetchURL, {
-        params: {
-          page: 1,
-          include_adult: false,
-        },
-      })
-      .then((response) => {
-        setMovies(
-          response.data.results.filter((item) => item.poster_path != null)
-        );
-        console.log(response.data);
-      });
-  }, [fetchURL]);
+  console.log("==@@@=> ", movies);
+
   return (
-    <>
+    <div className="main">
       <div className="container">
-        <h2 className=" md:text-xl p-2 pt-10  ">{title}</h2>
+        <h2 className=" md:text-xl p-2 pt-10  ">Search Movie</h2>
+
         <div className="slide">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -47,14 +38,13 @@ const Row = ({ title, fetchURL }) => {
                   src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`}
                   alt={item?.title}
                 />
-                <h1>{item.logo_path}</h1>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Row;
+export default SearchMovie;
