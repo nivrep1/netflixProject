@@ -12,7 +12,7 @@ function interceptor() {
 
       const params = config.params || {};
       params["api_key"] = apiKey;
-      params["language"] = `en-US`;
+     // params["language"] = `en-US`;
       config.params = params;
       return config;
     },

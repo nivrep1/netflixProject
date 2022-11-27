@@ -10,7 +10,7 @@
 body {
   background-color: #141414;
   font-family: "Lato" "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+} 
 
 /* Apply all the css to headerLinks(li) */
 @layer components {
@@ -21,6 +21,6 @@ body {
 /*Container*/
 .container {
   max-width: 100%;
-  width: 1275px;
+  width: 95%;
   margin: 0 auto;
 }
