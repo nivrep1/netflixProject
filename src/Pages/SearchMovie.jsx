@@ -22,24 +22,18 @@ const SearchMovie = () => {
         {/* <h2 className=" md:text-xl p-2 pt-10  ">Search Movie</h2> */}
 
         <div className="slide">
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={5}
-            slidesPerView={5}
-            loop={false}
-            navigation={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-          >
+        
+          
             {movies.map((item) => (
-              <SwiperSlide key={item.id}>
+              
                 <img
                   className="row_picture"
                   src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`}
                   alt={item?.title}
                 />
-              </SwiperSlide>
+            
             ))}
-          </Swiper>
+
         </div>
       </div>
     </div>
