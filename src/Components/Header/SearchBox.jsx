@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -36,11 +36,21 @@ const Search = () => {
       });
   };
 
+
+  const [isActive,setActive] = useState(false)
+
+  const handleToggle = ()=>{
+    setActive(!isActive)
+    console.log("sa");
+  }
+
   return (
     <div className="right">
-      <input
+    <div className="search">
+    <input
+     
         type="search"
-        placeholder="Search..."
+        placeholder="Titles, people, genres" className={isActive ? 'toggle' : 'input'}
         onChange={(e) => {
           const value = String(e.target.value);
 
@@ -52,10 +62,20 @@ const Search = () => {
         
         }}
       />
+      
+      <SearchIcon onClick={handleToggle} className="icon"/>
+      {/* <img className="img" src="https://static.vecteezy.com/system/resources/previews/000/442/657/non_2x/vector-search-icon.jpg" alt="image" /> */}
+    </div>
+      
 
-      <button>
+      {/* <button>
         <SearchIcon className="icon" />
-      </button>
+      </button> */}
+      {/* <div className="search">
+      <input type="text" placeholder="Titles, people, genres" className="input" />
+      <img className="img" src="https://static.vecteezy.com/system/resources/previews/000/442/657/non_2x/vector-search-icon.jpg" alt="image" />
+      </div> */}
+
       <NotificationsActiveIcon className="icon" />
       <div className="profile">
         <ArrowDropDownIcon className="icon" />
