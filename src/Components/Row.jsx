@@ -25,7 +25,6 @@ const Row = ({ title, fetchURL }) => {
     if (type == "movie") {
       contentType = "movie/";
     }
-    
 
     const URL = requests.requestMovieDetail + contentType + value;
     axios
@@ -56,8 +55,7 @@ const Row = ({ title, fetchURL }) => {
     axios
       .get(fetchURL, {
         params: {
-          page: 3,
-          include_adult: false,
+          include_adult: true,
         },
       })
       .then((response) => {
