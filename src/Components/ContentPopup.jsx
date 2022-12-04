@@ -2,13 +2,17 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
+import ReactPlayer from "react-player";
 
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopup } from "../Store/Reducer/popupReducer";
+import "../index.css";
 
 const ContentPopup = () => {
   const showDialog = useSelector((state) => state.popupValue.showPopup);
   const contentValue = useSelector((state) => state.popupValue.content);
+
+  const youtube = `https://www.youtube.com/watch?v=${contentValue.youtubeKey}`;
 
   console.log("[REDUX POPUP:]", contentValue);
   const dispatch = useDispatch();
@@ -30,9 +34,17 @@ const ContentPopup = () => {
             >
               <CloseIcon />
             </button>
-            {contentValue.title}
+            <ReactPlayer
+              url={youtube}
+              playing="true"
+              // controls="true"
+              light=""
+              width="100%"
+              height="400px "
+            />
+            <h2 className="text-4xl">{contentValue.title}</h2>
             {contentValue.description}
-            {contentValue.youtubeKey}
+            {contentValue.youtubeKey.trailer}
           </div>
         </Box>
       </Modal>
