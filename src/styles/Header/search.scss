@@ -10,19 +10,20 @@
     input {
       width: 0px;
       height: 34px;
+      color:aliceblue;
       
       background: transparent;
     // border: none;
       box-shadow: none;
-      color: #fff;
+     
       border: 1px solid transparent;
       outline: none;
-      padding-left: 35px;
+      padding-left: 45px;
       font-size: 16px;
-      transition: 0.3s ease all;
+      transition: 0.8s ease all;
       &.toggle {
         width: 240px;
-        border-color: #fff;
+        border-color: rgb(96, 94, 94);
         background-color: #000;
       }
     }

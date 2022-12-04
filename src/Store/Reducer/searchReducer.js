@@ -11,6 +11,11 @@ export const searchReducer = createSlice({
       state.title = action.payload.title;
       state.movies = action.payload.movies;
     },
+
+    changeSearchValue2: (state, action) => {
+      state.title = action.payload.title;
+      state.movies = action.payload.movies;
+    },
   },
 });
 
