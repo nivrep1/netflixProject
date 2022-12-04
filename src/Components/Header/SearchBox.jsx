@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -23,58 +23,47 @@ const Search = () => {
         params: {
           query: value,
           include_adult: false,
+          certification_country: true,
         },
       })
       .then((response) => {
         const data = {
           title: value,
           movies: response.data.results.filter(
-            (item) => item.backdrop_path != null
+            (item) => item.poster_path != null
           ),
         };
         dispatch(changeSearchValue(data));
       });
   };
+  // Search Activate
+  const [isActive, setActive] = useState(false);
 
-
-  const [isActive,setActive] = useState(false)
-
-  const handleToggle = ()=>{
-    setActive(!isActive)
+  const handleToggle = () => {
+    setActive(!isActive);
     console.log("sa");
-  }
+  };
 
   return (
     <div className="right">
-    <div className="search">
-    <input
-     
-        type="search"
-        placeholder="Titles, people, genres" className={isActive ? 'toggle' : 'input'}
-        onChange={(e) => {
-          const value = String(e.target.value);
+      <div className="search">
+        <input
+          type="search"
+          placeholder="Titles, people, genres"
+          className={isActive ? "toggle" : "input"}
+          onChange={(e) => {
+            const value = String(e.target.value);
 
-          navigate(value.length > 0 ? "/search" : "/");
+            navigate(value.length > 0 ? "/search" : "/");
 
-          if (value.length > 1) {
-            searchMulti(value);
-          }
+            if (value.length > 1) {
+              searchMulti(value);
+            }
+          }}
+        />
+        <SearchIcon onClick={handleToggle} className="icon" />
         
-        }}
-      />
-      
-      <SearchIcon onClick={handleToggle} className="icon"/>
-      {/* <img className="img" src="https://static.vecteezy.com/system/resources/previews/000/442/657/non_2x/vector-search-icon.jpg" alt="image" /> */}
-    </div>
-      
-
-      {/* <button>
-        <SearchIcon className="icon" />
-      </button> */}
-      {/* <div className="search">
-      <input type="text" placeholder="Titles, people, genres" className="input" />
-      <img className="img" src="https://static.vecteezy.com/system/resources/previews/000/442/657/non_2x/vector-search-icon.jpg" alt="image" />
-      </div> */}
+      </div>
 
       <NotificationsActiveIcon className="icon" />
       <div className="profile">

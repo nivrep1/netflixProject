@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ReactPlayer from "react-player/youtube";
 // Style
 import "../styles/Main.scss";
 //Api data requests
 import requests from "../Requests";
 
 const Home = () => {
-  //Main page Random Image Generator
+  // Main page Random Image Generator
   const [movies, setMovies] = useState([]);
   const movie = movies[Math.floor(Math.random() * movies.length)];
 
@@ -36,11 +37,12 @@ const Home = () => {
   return (
     <div className="main">
       {/* Gradient Background Image */}
+      {/* <ReactPlayer url='https://www.youtube.com/watch?v=BdJKm16Co6M' /> */}
       <div className="background   bg-gradient-to-r from-black"></div>
 
       {/* Main Page Random Film Images */}
       <img
-        className="main-picture"
+        className="main-picture   "
         src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
         alt={movie?.title}
       />
