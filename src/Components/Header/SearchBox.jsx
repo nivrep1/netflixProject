@@ -6,11 +6,15 @@ import "../../styles/Header/search.scss";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeSearchValue } from "../../Store/Reducer/searchReducer";
-
+import {Link} from "react-router-dom"
 import axios from "axios";
 import requests from "../../Requests";
+import { UserAuth } from "../../context/AuthContext";
 
 const Search = () => {
+  const {user,logOut} = UserAuth()
+  console.log(user);
+
   const navigate = useNavigate();
   const searchValue = useSelector((state) => state.searchValue.value);
   const dispatch = useDispatch();
@@ -36,8 +40,21 @@ const Search = () => {
       });
   };
 
+
+
+  const handleLogOut = async ()=>{
+    try{
+      await logOut()
+      navigate("/login")
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
   return (
-    <div className="right">
+    <div>
+{user?.email ? <div className="right">
       <input
         type="search"
         placeholder="Search..."
@@ -61,10 +78,22 @@ const Search = () => {
         <ArrowDropDownIcon className="icon" />
         <div className="options ">
           <span>Settings</span>
-          <span>Logout</span>
+          {/* <Link to="/login"> */}
+          <span>Account</span>
+          {/* </Link> */}
+          
+
+       
+         <span onClick={handleLogOut}>Log Out</span>
+      
+        
+        
+          
         </div>
       </div>
+    </div> : null}
     </div>
+    
   );
 };
 
