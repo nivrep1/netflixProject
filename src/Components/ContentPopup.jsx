@@ -37,14 +37,17 @@ const ContentPopup = () => {
             <ReactPlayer
               url={youtube}
               playing="true"
-              // controls="true"
-              light=""
+              // loop="true"
+              // light=""
               width="100%"
-              height="400px "
+              height="400px"
             />
-            <h2 className="text-4xl">{contentValue.title}</h2>
-            {contentValue.description}
-            {contentValue.youtubeKey.trailer}
+            <h2 className="text-4xl mt-[12px]">{contentValue.title}</h2>
+            <p className="text-xl  mt-[12px]">
+              Release Date : {contentValue.release_date}
+            </p>
+            <p className="text-xl  mt-[12px]">{contentValue.age_restriction}</p>
+            <p className="text-xl  mt-[12px]">{contentValue.description}</p>
           </div>
         </Box>
       </Modal>

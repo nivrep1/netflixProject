@@ -15,7 +15,7 @@ const Home = () => {
     axios
       .get(requests.requestPopular, {
         params: {
-          page: 5,
+          page: 6,
           include_adult: false,
         },
       })
@@ -57,7 +57,7 @@ const Home = () => {
         </h2>
         <div className="my-4"></div>
 
-        <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
+        <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 text-xl">
           {trunCateString(movie?.overview, 150)}
         </p>
       </div>
