@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Link } from "react-router-dom";
 import "../../styles/Header/search.scss";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeSearchValue } from "../../Store/Reducer/searchReducer";
-
+import { UserAuth } from "../../context/AuthContext";
 import axios from "axios";
 import requests from "../../Requests";
 
 const Search = () => {
+  const {user,logOut} = UserAuth()
+  console.log(user);
   const navigate = useNavigate();
   const searchValue = useSelector((state) => state.searchValue.value);
   const dispatch = useDispatch();
@@ -36,6 +39,18 @@ const Search = () => {
         dispatch(changeSearchValue(data));
       });
   };
+
+  const handleLogOut = async ()=>{
+    try{
+      await logOut()
+      navigate("/login")
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
+
   // Search Activate
   const [isActive, setActive] = useState(false);
 
@@ -45,7 +60,8 @@ const Search = () => {
   };
 
   return (
-    <div className="right">
+    <div>
+      {user?.email ? <div className="right">
       <div className="search">
         <input
           type="search"
@@ -69,11 +85,13 @@ const Search = () => {
       <div className="profile">
         <ArrowDropDownIcon className="icon" />
         <div className="options ">
-          <span>Settings</span>
-          <span>Logout</span>
+          <span>Account</span>
+          <span onClick={handleLogOut}>Logout</span>
         </div>
       </div>
+    </div> : null}
     </div>
+    
   );
 };
 
