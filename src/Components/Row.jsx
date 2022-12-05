@@ -30,6 +30,7 @@ const Row = ({ title, fetchURL }) => {
     axios
       .get(URL, {
         params: {
+          pages: 2,
           append_to_response: "videos",
         },
       })
@@ -42,8 +43,10 @@ const Row = ({ title, fetchURL }) => {
             result.videos.results.length != 0
               ? result.videos.results[0].key
               : "",
-          age_restriction: "18+",
+          age_restriction: "16+",
           description: result.overview,
+          release_date: result.release_date,
+          vote_average: result.vote_average,
         };
 
         dispatch(setContent(reduxSaveData));
@@ -55,14 +58,14 @@ const Row = ({ title, fetchURL }) => {
     axios
       .get(fetchURL, {
         params: {
-          include_adult: true,
+          include_adult: false,
         },
       })
       .then((response) => {
         setMovies(
           response.data.results.filter((item) => item.poster_path != null)
         );
-        console.log(response.data);
+        // console.log(response.data);
       });
   }, [fetchURL]);
 
@@ -84,8 +87,8 @@ const Row = ({ title, fetchURL }) => {
                 {/* <Button onClick={handleOpen}>Open modal</Button> */}
                 <img
                   onClick={(click) => {
-                    console.log("===content= >", item);
-                    console.log("===content= >", item.media_type);
+                    // console.log("===content= >", item);
+                    // console.log("===content= >", item.media_type);
 
                     selectObject(item.id, item.media_type);
                   }}

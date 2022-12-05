@@ -15,7 +15,6 @@ const Home = () => {
         fetchURL={requests.requestNetflixOriginals}
       />
       <Row title="Tv Top Rated" fetchURL={requests.requestTvTopRated} />
-      <Row title="Up Coming" fetchURL={requests.requestUpComing} />
       <Row title="Tv Popular" fetchURL={requests.requestTvPopular} />
       <Row title="Tv Airing Today" fetchURL={requests.requestTvAiringToday} />
       <Row title="Trend All Week" fetchURL={requests.requestTrendAllWeek} />

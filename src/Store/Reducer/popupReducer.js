@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 export const popupReducer = createSlice({
   name: "takeKey",
   initialState: {
@@ -10,6 +9,7 @@ export const popupReducer = createSlice({
       youtubeKey: "",
       age_restriction: "",
       description: "",
+      release_date: "",
     },
   },
 
@@ -19,20 +19,21 @@ export const popupReducer = createSlice({
     },
 
     showPopup: (state) => {
-      state.showPopup = true
+      state.showPopup = true;
     },
 
     hidePopup: (state) => {
-      state.showPopup = false
+      state.showPopup = false;
     },
 
     setShowPopup: (state, action) => {
-      state.showPopup = action.payload
+      state.showPopup = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setContent, showPopup, hidePopup, setShowPopup } = popupReducer.actions;
+export const { setContent, showPopup, hidePopup, setShowPopup } =
+  popupReducer.actions;
 
 export default popupReducer.reducer;
