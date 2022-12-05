@@ -1,6 +1,43 @@
 .right {
   display: flex;
   align-items: center;
+  .search {
+    right: 150px;
+    position: absolute;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    input {
+      width: 0px;
+      height: 34px;
+      color:aliceblue;
+      
+      background: transparent;
+    // border: none;
+      box-shadow: none;
+     
+      border: 1px solid transparent;
+      outline: none;
+      padding-left: 45px;
+      font-size: 16px;
+      transition: 0.8s ease all;
+      &.toggle {
+        width: 240px;
+        border-color: rgb(96, 94, 94);
+        background-color: #000;
+      }
+    }
+    .icon {
+      width: 30px;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      margin: 0px 12px;
+      color: white;
+      cursor: pointer;
+    }
+  }
   .icon {
     margin: 0px 12px;
     color: white;
