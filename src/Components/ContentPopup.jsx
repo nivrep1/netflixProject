@@ -36,8 +36,8 @@ const ContentPopup = () => {
             </button>
             <ReactPlayer
               url={youtube}
-              playing="true"
-              // loop="true"
+              playing={true}
+              // loop={true}
               // light=""
               width="100%"
               height="400px"

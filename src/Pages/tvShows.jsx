@@ -3,6 +3,8 @@ import requests from "../Requests";
 import axios from "axios";
 import ContentPopup from "../Components/ContentPopup";
 import Row from "../Components/Row";
+import "../styles/Main.scss";
+
 
 const TvShows = () => {
   //Main page Random Image Generator
@@ -18,6 +20,7 @@ const TvShows = () => {
       })
       .then((response) => {
         setMovies(response.data.results);
+        response.data.results.filter((item) => item.backdrop_path != null);
       });
   }, []);
 
@@ -32,20 +35,20 @@ const TvShows = () => {
 
   return (
     <>
-      <div className="w-full h-[100vh] text-white">
+      <div className="main">
         <div className="w-full h-full ">
           {/* Gradient Background Image */}
-          <div className="absolute w-full h-[100vh] bg-gradient-to-r from-black"></div>
+          <div className="background   bg-gradient-to-r from-black"></div>
 
           {/* Main Page Random Film Images */}
           <img
-            className=" w-full h-full object-cover"
+            className="main-picture"
             src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
             alt={movie?.title}
           />
 
           {/*Movie Description && Buttons(Home page)  */}
-          <div className="absolute w-full top-[20%] p-4 md:p-8">
+          <div className="description  md:p-8">
             <h1 className="text-3xl md:text-5xl font-bold w-[50%]">
               {movie?.title}
               {movie?.name}
@@ -61,6 +64,7 @@ const TvShows = () => {
           </div>
         </div>
       </div>
+
       <ContentPopup />
       <Row
         title="Netflix Originals"

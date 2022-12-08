@@ -4,9 +4,11 @@ import requests from "../Requests";
 import Row from "../Components/Row";
 import ContentPopup from "../Components/ContentPopup";
 
+
 const Home = () => {
   return (
     <div>
+     
       <Main />
       <ContentPopup />
       <Row title="Popular" fetchURL={requests.requestPopular} />
@@ -18,6 +20,7 @@ const Home = () => {
       <Row title="Tv Popular" fetchURL={requests.requestTvPopular} />
       <Row title="Tv Airing Today" fetchURL={requests.requestTvAiringToday} />
       <Row title="Trend All Week" fetchURL={requests.requestTrendAllWeek} />
+      <Row title="Discover" fetchURL={requests.requestDiscover} />
     </div>
   );
 };

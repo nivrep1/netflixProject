@@ -19,6 +19,8 @@ const Row = ({ title, fetchURL }) => {
   const [movies, setMovies] = useState([]);
   const dispatch = useDispatch();
 
+  const TRAILER = "Trailer";
+
   const selectObject = (value, type) => {
     var contentType = "tv/";
 
@@ -30,19 +32,24 @@ const Row = ({ title, fetchURL }) => {
     axios
       .get(URL, {
         params: {
-          pages: 2,
           append_to_response: "videos",
         },
       })
       .then((response) => {
         const result = response.data;
+        let youtubeKey = "";
+
+        if (result.videos.results.length != 0) {
+          const videos = result.videos.results.filter(
+            (video) => video.type === TRAILER
+          );
+          youtubeKey =
+            videos.length == 0 ? result.videos.result[0].key : videos[0].key;
+        }
 
         const reduxSaveData = {
           title: result.title == null ? result.name : result.title,
-          youtubeKey:
-            result.videos.results.length != 0
-              ? result.videos.results[0].key
-              : "",
+          youtubeKey: youtubeKey,
           age_restriction: "16+",
           description: result.overview,
           release_date: result.release_date,
@@ -58,6 +65,7 @@ const Row = ({ title, fetchURL }) => {
     axios
       .get(fetchURL, {
         params: {
+          pages: 1,
           include_adult: false,
         },
       })
@@ -65,7 +73,6 @@ const Row = ({ title, fetchURL }) => {
         setMovies(
           response.data.results.filter((item) => item.poster_path != null)
         );
-        // console.log(response.data);
       });
   }, [fetchURL]);
 
@@ -84,19 +91,16 @@ const Row = ({ title, fetchURL }) => {
           >
             {movies.map((item) => (
               <SwiperSlide key={item.id}>
-                {/* <Button onClick={handleOpen}>Open modal</Button> */}
-                <img
-                  onClick={(click) => {
-                    // console.log("===content= >", item);
-                    // console.log("===content= >", item.media_type);
-
-                    selectObject(item.id, item.media_type);
-                  }}
-                  className="row_picture   rounded"
-                  src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`}
-                  alt={item?.title}
-                />
-                <h1>{item.logo_path}</h1>
+                <div className="img-box">
+                  <img
+                    onClick={(click) => {
+                      selectObject(item.id, item.media_type);
+                    }}
+                    className="row_picture   rounded"
+                    src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`}
+                    alt={item?.title}
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
