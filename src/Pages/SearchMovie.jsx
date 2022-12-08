@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import { setContent, showPopup } from "../Store/Reducer/popupReducer";
 import ContentPopup from "../Components/ContentPopup";
 
+
+
 const SearchMovie = () => {
   const title = useSelector((state) => state.searchValue.title);
   const movies = useSelector((state) => state.searchValue.movies);
@@ -50,13 +52,14 @@ const SearchMovie = () => {
 
   return (
     <>
+   
       <ContentPopup />
       <div className="main">
         <div className="search-page">
           <div className="container">
             <div className="slide">
               {movies.map((item) => (
-                <div className="zibil">
+                <div className="img-box">
                   <img
                     onClick={(click) => {
                       console.log("===content= >", item);

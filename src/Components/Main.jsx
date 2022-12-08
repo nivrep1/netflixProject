@@ -21,6 +21,7 @@ const Home = () => {
       })
       .then((response) => {
         setMovies(response.data.results);
+        response.data.results.filter((item) => item.backdrop_path != null)
       });
   }, []);
 
@@ -36,21 +37,16 @@ const Home = () => {
   return (
     <div className="main">
       {/* Gradient Background Image */}
-      {/* <ReactPlayer url='https://www.youtube.com/watch?v=BdJKm16Co6M' /> */}
       <div className="background   bg-gradient-to-r from-black"></div>
 
       {/* Main Page Random Film Images */}
       <img
-        className="main-picture   "
+        className="main-picture"
         src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
         alt={movie?.title}
       />
       {/*Movie Description && Buttons(Home page)  */}
       <div className="description  md:p-8">
-        {/* <img
-          src={`https://image.tmdb.org/t/p/original/${item?.logo_path}`}
-          alt="vndhv"
-        /> */}
         <h2 className="text-3xl w-6/12 md:text-5xl font-bold">
           {movie?.title}
           {movie?.name}

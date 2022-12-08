@@ -12,7 +12,7 @@ import axios from "axios";
 import requests from "../../Requests";
 
 const Search = () => {
-  const {user,logOut} = UserAuth()
+  const { user, logOut } = UserAuth();
   console.log(user);
   const navigate = useNavigate();
   const searchValue = useSelector((state) => state.searchValue.value);
@@ -36,20 +36,19 @@ const Search = () => {
             (item) => item.poster_path != null
           ),
         };
+
         dispatch(changeSearchValue(data));
       });
   };
 
-  const handleLogOut = async ()=>{
-    try{
-      await logOut()
-      navigate("/login")
-    }
-    catch(error){
+  const handleLogOut = async () => {
+    try {
+      await logOut();
+      navigate("/login");
+    } catch (error) {
       console.log(error);
     }
-  }
-
+  };
 
   // Search Activate
   const [isActive, setActive] = useState(false);
@@ -61,37 +60,37 @@ const Search = () => {
 
   return (
     <div>
-      {user?.email ? <div className="right">
-      <div className="search">
-        <input
-          type="search"
-          placeholder="Titles, people, genres"
-          className={isActive ? "toggle" : "input"}
-          onChange={(e) => {
-            const value = String(e.target.value);
+      {user?.email ? (
+        <div className="right">
+          <div className="search">
+            <input
+              type="search"
+              placeholder="Titles, people, genres"
+              className={isActive ? "toggle" : "input"}
+              onChange={(e) => {
+                const value = String(e.target.value);
 
-            navigate(value.length > 0 ? "/search" : "/");
+                navigate(value.length > 0 ? "/search" : "/");
 
-            if (value.length > 1) {
-              searchMulti(value);
-            }
-          }}
-        />
-        <SearchIcon onClick={handleToggle} className="icon" />
-        
-      </div>
+                if (value.length > 1) {
+                  searchMulti(value);
+                }
+              }}
+            />
+            <SearchIcon onClick={handleToggle} className="icon" />
+          </div>
 
-      <NotificationsActiveIcon className="icon" />
-      <div className="profile">
-        <ArrowDropDownIcon className="icon" />
-        <div className="options ">
-          <span>Account</span>
-          <span onClick={handleLogOut}>Logout</span>
+          <NotificationsActiveIcon className="icon" />
+          <div className="profile">
+            <ArrowDropDownIcon className="icon" />
+            <div className="options ">
+              <span>Account</span>
+              <span onClick={handleLogOut}>Logout</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div> : null}
+      ) : null}
     </div>
-    
   );
 };
 
