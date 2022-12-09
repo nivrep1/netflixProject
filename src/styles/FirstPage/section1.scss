@@ -1,0 +1,16 @@
+.section{
+    .background-image{
+        background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ac9aedf1-a687-4c5d-965c-2fc3eac84aea/b8c20d0f-f201-4fb8-8526-7726dc60489d/AZ-en-20221206-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+        width: 100%;
+        height: 780px;
+        object-fit: cover;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        .title{
+            color: white;
+            font-size: 64px;
+            
+        }
+    }
+}
