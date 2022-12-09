@@ -1,14 +1,28 @@
 import React from "react";
+import "../../styles/FirstPage/section2.scss";
+import "../../styles/FirstPage/section2.scss"
 
 const Section2 = () => {
   return (
-    <div>
-      <div>
+    <div className="section-two  bg-black flex">
+      <div className="description">
         <h2>Enjoy on your TV.</h2>
-        <p>
+        <p className="text-white ">
           Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
           players, and more.
         </p>
+      </div>
+      <div className="tv">
+        <img 
+          src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+          alt="tv"
+        />
+        <video className="poster-video" width="320" height="240" autoPlay loop muted>
+          <source
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+            type="video/mp4"
+          />
+        </video>
       </div>
     </div>
   );
