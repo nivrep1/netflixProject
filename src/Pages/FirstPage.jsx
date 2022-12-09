@@ -1,12 +1,11 @@
-import React from 'react'
-import FirstPageMain from '../Components/FirstPage/FirstPageMain'
+import React from "react";
+import FirstPageMain from "../Components/FirstPage/FirstPageMain";
 const FirstPage = () => {
   return (
-    <div>
-        <FirstPageMain/>
-       
+    <div className="bg-black h-full">
+      <FirstPageMain />
     </div>
-  )
-}
+  );
+};
 
-export default FirstPage
+export default FirstPage;

@@ -12,13 +12,15 @@ import SignUp from "./Pages/SignUp";
 import Account from "./Pages/Account";
 import ProtectorRoute from "./Components/ProtectorRoute";
 import Head from "./Components/Header/Head";
+
 import FirstPage from "./Pages/FirstPage";
 
 function App() {
   return (
     <>
       <div className="relative h-screen  lg:h-[140vh]">
-        <Head  />
+        {false ? <></> : <Head />}
+
         <Routes>
           <Route
             path="/"
@@ -78,7 +80,7 @@ function App() {
               </ProtectorRoute>
             }
           />
-         <Route path="/firstPage" element={<FirstPage/>}/>
+          <Route path="/firstPage" element={<FirstPage />} />
         </Routes>
       </div>
     </>
