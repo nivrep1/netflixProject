@@ -12,8 +12,7 @@ import SignUp from "./Pages/SignUp";
 import Account from "./Pages/Account";
 import ProtectorRoute from "./Components/ProtectorRoute";
 import Head from "./Components/Header/Head";
-
-import { FirstPage } from "@mui/icons-material";
+import FirstPage from "./Pages/FirstPage";
 
 function App() {
   return (
