@@ -43,10 +43,12 @@ const ContentPopup = () => {
               height="400px"
             />
             <h2 className="text-4xl mt-[12px]">{contentValue.title}</h2>
-            <p className="text-xl  mt-[12px]">
+            <p className="text-xl  mt-[12px] text-[#46d369]">
               Release Date : {contentValue.release_date}
             </p>
-            <p className="text-xl  mt-[12px]">{contentValue.age_restriction}</p>
+            <p className="text-xl  mt-[12px] text-[#e50914]">
+              {contentValue.age_restriction}
+            </p>
             <p className="text-xl  mt-[12px]">{contentValue.description}</p>
           </div>
         </Box>

@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <div className="relative h-screen  lg:h-[140vh]">
-        <Head />
+        <Head  />
         <Routes>
           <Route
             path="/"
