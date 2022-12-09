@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { Link } from "react-router-dom";
 import "../../styles/Header/search.scss";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -84,7 +83,11 @@ const Search = () => {
           <div className="profile">
             <ArrowDropDownIcon className="icon" />
             <div className="options ">
-              <span>Account</span>
+              <span>
+                <a href="https://console.firebase.google.com/project/netflix-clone-94dcf/authentication/users">
+                  Account
+                </a>
+              </span>
               <span onClick={handleLogOut}>Logout</span>
             </div>
           </div>

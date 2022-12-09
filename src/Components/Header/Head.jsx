@@ -5,14 +5,10 @@ import Search from "./SearchBox";
 import "../../styles/Header/head.scss";
 import { UserAuth } from "../../context/AuthContext";
 
-
-
 const Head = (queryValue) => {
-
-  const {user,logOut} = UserAuth()
+  const { user, logOut } = UserAuth();
   console.log(user);
 
-  
   const [IsScrolled, setIsScrolled] = useState(false);
 
   const refreshPage = () => {
@@ -34,20 +30,21 @@ const Head = (queryValue) => {
   }, []);
 
   return (
-    <header className={`${IsScrolled && "bg-[#141414]"}`}>
-      <div className="container">
-      {user?.email ? <div className="nav">
-          <div className="lobar">
-            <Logo onClick={refreshPage} />
-            <Navbar />
+    <div>
+      {user?.email ? (
+        <header className={`${IsScrolled && "bg-[#141414]"}`}>
+          <div className="container">
+            <div className="nav">
+              <div className="lobar">
+                <Logo onClick={refreshPage} />
+                <Navbar />
+              </div>
+              <Search />
+            </div>
           </div>
-          <Search /> 
-
-          
-        </div> : null}
-        
-      </div>
-    </header>
+        </header>
+      ) : null}
+    </div>
   );
 };
 

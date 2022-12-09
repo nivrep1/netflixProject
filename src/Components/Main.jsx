@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <div className="main">
       {/* Gradient Background Image */}
-      <div className="background   bg-gradient-to-r from-black"></div>
+      <div className="background"></div>
 
       {/* Main Page Random Film Images */}
       <img
