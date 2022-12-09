@@ -5,7 +5,19 @@ import Search from "./SearchBox";
 import "../../styles/Header/head.scss";
 import { UserAuth } from "../../context/AuthContext";
 
+import { useNavigate } from "react-router";
+
+
 const Head = (queryValue) => {
+  const navigate = useNavigate()
+  const handleFirstPage = async () => {
+    try {
+      await logOut();
+      navigate("/firstPage");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const { user, logOut } = UserAuth();
   console.log(user);
 
@@ -24,6 +36,9 @@ const Head = (queryValue) => {
       }
     };
     window.addEventListener("scroll", handleScroll);
+
+   
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -43,7 +58,17 @@ const Head = (queryValue) => {
             </div>
           </div>
         </header>
-      ) : null}
+      ) : <header>
+          <div className="container">
+            <div className="nav">
+              <div className="lobar">
+              <Logo onClick={handleFirstPage}/>
+               
+              </div>
+           
+            </div>
+          </div>
+        </header>}
     </div>
   );
 };

@@ -13,6 +13,8 @@ import Account from "./Pages/Account";
 import ProtectorRoute from "./Components/ProtectorRoute";
 import Head from "./Components/Header/Head";
 
+import { FirstPage } from "@mui/icons-material";
+
 function App() {
   return (
     <>
@@ -77,6 +79,7 @@ function App() {
               </ProtectorRoute>
             }
           />
+         <Route path="/firstPage" element={<FirstPage/>}/>
         </Routes>
       </div>
     </>
