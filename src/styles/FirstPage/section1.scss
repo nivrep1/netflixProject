@@ -1,4 +1,16 @@
 .section{
+    position: relative;
+    
+    border-bottom: 8px solid #222;
+    .color-background{ 
+        position: absolute; 
+        top: 0; 
+        width: 100%; 
+        height: 100%; 
+        background: rgba(0,0,0,.4);
+        background-image: linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8));
+
+      }
     .background-image{
         background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ac9aedf1-a687-4c5d-965c-2fc3eac84aea/b8c20d0f-f201-4fb8-8526-7726dc60489d/AZ-en-20221206-popsignuptwoweeks-perspective_alpha_website_large.jpg);
         width: 100%;
@@ -7,10 +19,57 @@
         display: flex;
             align-items: center;
             justify-content: center;
-        .title{
-            color: white;
-            font-size: 64px;
-            
-        }
+            .description{
+                text-align: center;
+                position: static;
+                    z-index: 100;
+                    width: 38%;
+                .title{
+                    font-weight: 800;
+                    line-height: 1.2;
+                    color: white;
+                    font-size: 64px;
+                    
+                }
+                .command-tag{
+                    margin-top: 12px;
+                    font-weight: 400;
+                    font-size: 26px;
+                    color: #fff;
+                }
+                .text{
+                    color: #fff;
+                    font-weight: 400;
+                    font-size: 20px;
+                    margin: 20px 0;
+                }
+                .button{
+                    text-align: left;
+                }
+                .get-started{
+                    margin: auto;
+    height: 56px;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 7px 17px;
+    background: #e50914;
+    cursor: pointer;
+    outline: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border: none;
+    // margin-left: -5px;
+    &:hover{
+        background-color: #f40612;
+    }
+    a{
+        text-decoration: none;
+    color: white;
+    }
+                }
+            }
+        
     }
 }
