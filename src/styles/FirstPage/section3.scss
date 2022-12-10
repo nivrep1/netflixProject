@@ -1,0 +1,25 @@
+.section-download {
+  border-bottom: 8px solid #222;
+  align-items: center;
+  padding: 50px 45px;
+  .phone {
+    width: 50%;
+    img{
+        width: 90%;
+    }
+  }
+  .description-phone {
+    width: 50%;
+    h2 {
+      color: white;
+      font-size: 40px;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      width: 90%;
+      font-size: 1.625rem;
+      font-weight: 400;
+      color: white;
+    }
+  }
+}

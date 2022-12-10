@@ -1,10 +1,10 @@
 import React from "react";
 import "../../styles/FirstPage/section2.scss";
-import "../../styles/FirstPage/section2.scss"
+import "../../styles/FirstPage/section2.scss";
 
 const Section2 = () => {
   return (
-    <div className="section-two  bg-black flex">
+    <div className="section-enjoy  bg-black flex">
       <div className="description">
         <h2>Enjoy on your TV.</h2>
         <p className="text-white ">
@@ -13,13 +13,19 @@ const Section2 = () => {
         </p>
       </div>
       <div className="tv">
-        <img 
+        <img
           src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
           alt="tv"
         />
-        <video className="poster-video" width="320" height="240" autoPlay loop muted>
+        <video
+          className="poster-video"
+          width="71%"
+          autoPlay
+          loop
+          muted
+        >
           <source
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
             type="video/mp4"
           />
         </video>
