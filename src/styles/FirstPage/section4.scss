@@ -1,4 +1,4 @@
-.section-enjoy {
+.section-watch {
   border-bottom: 8px solid #222;
   align-items: center;
   padding: 45px 70px;
@@ -16,7 +16,7 @@
       color: white;
     }
   }
-  .tv {
+  .desktop {
     width: 50%;
     height: 438px;
     position: relative;
@@ -29,8 +29,8 @@
     .poster-video {
       position: absolute;
       z-index: 1;
-      top: 91px;
-      left: 72px;
+      top: 40px;
+      left: 102px;
     }
   }
 }
