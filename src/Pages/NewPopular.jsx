@@ -5,6 +5,7 @@ import Row from "../Components/Row";
 //Api data requests
 import requests from "../Requests";
 import "../styles/Main.scss";
+import Footer from "../Components/Footer/Footer";
 
 const NewPopular = () => {
   //Main page Random Image Generator
@@ -21,7 +22,7 @@ const NewPopular = () => {
       })
       .then((response) => {
         setMovies(response.data.results);
-        response.data.results.filter((item) => item.backdrop_path != null)
+        response.data.results.filter((item) => item.backdrop_path != null);
       });
   }, []);
 
@@ -73,6 +74,7 @@ const NewPopular = () => {
       />
       <Row title="Tv Popular" fetchURL={requests.requestTvPopular} />
       <Row title="Trend All Week" fetchURL={requests.requestTrendAllWeek} />
+      <Footer />
     </>
   );
 };

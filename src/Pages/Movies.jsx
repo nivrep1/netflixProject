@@ -4,6 +4,7 @@ import axios from "axios";
 import Row from "../Components/Row";
 import ContentPopup from "../Components/ContentPopup";
 import "../styles/Main.scss";
+import Footer from "../Components/Footer/Footer";
 
 const Movies = () => {
   //Main page Random Image Generator
@@ -20,7 +21,7 @@ const Movies = () => {
       })
       .then((response) => {
         setMovies(response.data.results);
-        response.data.results.filter((item) => item.backdrop_path != null)
+        response.data.results.filter((item) => item.backdrop_path != null);
       });
   }, []);
 
@@ -62,6 +63,7 @@ const Movies = () => {
             </p>
           </div>
         </div>
+        <Footer />
       </div>
 
       <ContentPopup />

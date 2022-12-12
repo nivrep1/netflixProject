@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import "../index.css";
 import TextField from "@mui/material/TextField";
+import Footer from "../Components/Footer/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -102,6 +103,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
