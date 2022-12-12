@@ -6,11 +6,15 @@ import ReactPlayer from "react-player";
 
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopup } from "../Store/Reducer/popupReducer";
+import { addMovie, removeMovie } from "../Store/Reducer/favoriteReducer";
 import "../index.css";
 
 const ContentPopup = () => {
   const showDialog = useSelector((state) => state.popupValue.showPopup);
   const contentValue = useSelector((state) => state.popupValue.content);
+  const favoriteValue = useSelector((state) => state.favoriteValue.list);
+
+  console.log("====>", favoriteValue)
 
   const youtube = `https://www.youtube.com/watch?v=${contentValue.youtubeKey}`;
 
@@ -34,6 +38,26 @@ const ContentPopup = () => {
             >
               <CloseIcon />
             </button>
+            <button
+              className="add"
+              onClick={() => {
+                dispatch(addMovie(contentValue));
+                console.log("click button")
+              }}
+            >
+              <CloseIcon />
+            </button>
+
+            <button
+              className="remove"
+              onClick={() => {
+                dispatch(removeMovie(contentValue.title));
+                console.log("click button", contentValue.title)
+              }}
+            >
+              <CloseIcon />
+            </button>
+
             <ReactPlayer
               url={youtube}
               playing={true}
