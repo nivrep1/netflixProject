@@ -11,10 +11,7 @@ const Section1 = () => {
         <div className="description">
           <h1 className="title">Unlimited movies, TV shows, and more.</h1>
           <h2 className="command-tag">Watch anywhere. Cancel anytime.</h2>
-          <p className="text">
-            Ready to watch? Enter your email to create or restart your
-            membership.
-          </p>
+          
           <div className="button">
           <ButtonEmail/>
           </div>

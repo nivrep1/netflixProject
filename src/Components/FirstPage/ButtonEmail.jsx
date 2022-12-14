@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-
+import "../../styles/FirstPage/buttonEmail.scss"
 
 const ButtonEmail = () => {
   return (
-    <div>
+    <div className="button-email">
+    <p className="text">
+            Ready to watch? Enter your email to create or restart your
+            membership.
+          </p>
       <TextField
         style={{ width: "55%" }}
         required
@@ -18,7 +22,7 @@ const ButtonEmail = () => {
         className="textField"
       />
       <Link to="/signup">
-      <button className="get-started"><a href="#">Get Started</a>  </button>
+      <button className="get-started"><a href="#">Get Started</a></button>
       </Link>
     </div>
   );
