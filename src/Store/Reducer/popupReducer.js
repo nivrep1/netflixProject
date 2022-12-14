@@ -5,11 +5,13 @@ export const popupReducer = createSlice({
   initialState: {
     showPopup: false,
     content: {
+      id: 0,
       title: "",
       youtubeKey: "",
       age_restriction: "",
       description: "",
       release_date: "",
+      posterPath: "",
     },
   },
 

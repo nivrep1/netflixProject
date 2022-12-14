@@ -48,12 +48,14 @@ const Row = ({ title, fetchURL }) => {
         }
 
         const reduxSaveData = {
+          id: result.id,
           title: result.title == null ? result.name : result.title,
           youtubeKey: youtubeKey,
           age_restriction: "16+",
           description: result.overview,
           release_date: result.release_date,
           vote_average: result.vote_average,
+          posterPath: result.poster_path,
         };
 
         dispatch(setContent(reduxSaveData));

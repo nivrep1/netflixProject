@@ -215,9 +215,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <div>
-        <ButtonEmail/>
-      </div>
+      
     </div>
   );
 };

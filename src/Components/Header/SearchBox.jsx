@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import "../../styles/Header/search.scss";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeSearchValue } from "../../Store/Reducer/searchReducer";
 import { UserAuth } from "../../context/AuthContext";
+// Icon
+import SearchIcon from "@mui/icons-material/Search";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// Axios & Requests
 import axios from "axios";
 import requests from "../../Requests";
+//Style
+import "../../styles/Header/search.scss";
 
 const Search = () => {
   const { user, logOut } = UserAuth();
-  console.log(user);
+
   const navigate = useNavigate();
   const searchValue = useSelector((state) => state.searchValue.value);
   const dispatch = useDispatch();
