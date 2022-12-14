@@ -1,20 +1,24 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import CloseIcon from "@mui/icons-material/Close";
-import ReactPlayer from "react-player";
-
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopup } from "../Store/Reducer/popupReducer";
 import { addMovie, removeMovie } from "../Store/Reducer/favoriteReducer";
+// Components
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Star from "../Components/Rating/Star";
+import ReactPlayer from "react-player";
+// Icon
+import CloseIcon from "@mui/icons-material/Close";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
+import BookmarkAddOutlinedIcon from "@mui/icons-material/BookmarkAddOutlined";
+// Style
 import "../index.css";
 
 const ContentPopup = () => {
   const showDialog = useSelector((state) => state.popupValue.showPopup);
   const contentValue = useSelector((state) => state.popupValue.content);
   const favoriteValue = useSelector((state) => state.favoriteValue.list);
-
-  console.log("====>", favoriteValue)
 
   const youtube = `https://www.youtube.com/watch?v=${contentValue.youtubeKey}`;
 
@@ -42,20 +46,24 @@ const ContentPopup = () => {
               className="add"
               onClick={() => {
                 dispatch(addMovie(contentValue));
-                console.log("click button")
+                console.log("click button");
               }}
-            >
-              <CloseIcon />
+            > 
+              <IconButton aria-label="add">
+                <BookmarkAddOutlinedIcon style={{ color: "white" }} />
+              </IconButton>
             </button>
 
             <button
               className="remove"
               onClick={() => {
-                dispatch(removeMovie(contentValue.title));
-                console.log("click button", contentValue.title)
+                dispatch(removeMovie(contentValue.id));
+                console.log("click button", contentValue.title);
               }}
             >
-              <CloseIcon />
+              <IconButton aria-label="delete">
+                <DeleteIcon style={{ color: "white" }} />
+              </IconButton>
             </button>
 
             <ReactPlayer
@@ -73,6 +81,7 @@ const ContentPopup = () => {
             <p className="text-xl  mt-[12px] text-[#e50914]">
               {contentValue.age_restriction}
             </p>
+            <Star />
             <p className="text-xl  mt-[12px]">{contentValue.description}</p>
           </div>
         </Box>
