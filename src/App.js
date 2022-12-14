@@ -19,13 +19,14 @@ function App() {
   return (
     <>
       <div className="relative h-screen  lg:h-[140vh]">
-        {false ? <></> : <Head />}
+      
 
         <Routes>
           <Route
             path="/"
             element={
               <ProtectorRoute>
+              <Head/>
                 <Home />
               </ProtectorRoute>
             }
@@ -34,6 +35,7 @@ function App() {
             path="/movies"
             element={
               <ProtectorRoute>
+              <Head/>
                 <Movies />
               </ProtectorRoute>
             }
@@ -42,6 +44,7 @@ function App() {
             path="/tvShows"
             element={
               <ProtectorRoute>
+              <Head/>
                 <TvShows />
               </ProtectorRoute>
             }
@@ -50,6 +53,7 @@ function App() {
             path="/newPopular"
             element={
               <ProtectorRoute>
+              <Head/>
                 <NewPopular />
               </ProtectorRoute>
             }
@@ -58,6 +62,7 @@ function App() {
             path="/myList"
             element={
               <ProtectorRoute>
+              <Head/>
                 <MyList />
               </ProtectorRoute>
             }
@@ -66,6 +71,7 @@ function App() {
             path="/search"
             element={
               <ProtectorRoute>
+              <Head/>
                 <SearchMovie />
               </ProtectorRoute>
             }
