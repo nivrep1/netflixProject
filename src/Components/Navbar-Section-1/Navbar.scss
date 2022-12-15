@@ -1,0 +1,45 @@
+.section-navbar{
+    width: 100%;
+    padding: 0 45px;
+    background-color: transparent;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index:1000;
+    .left-navbar{
+      
+    }
+    .right-navbar{
+        
+        display: flex;
+        .select{
+            padding-bottom: 0;
+            select{
+                color: white;
+                option{
+                    color: black;
+                }
+            }
+            .icon{
+                fill: white;
+            }
+        }
+        .button{
+            margin-left: 20px;
+          
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                border-radius: 5px;
+                padding: 5px 15px;
+                background-color: red;
+                color: white;
+            }
+        }
+    }
+
+}

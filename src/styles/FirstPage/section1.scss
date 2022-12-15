@@ -1,6 +1,6 @@
+
 .section{
     position: relative;
-    
     border-bottom: 8px solid #222;
     .color-background{ 
         position: absolute; 
@@ -13,13 +13,17 @@
       }
     .background-image{
         background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ac9aedf1-a687-4c5d-965c-2fc3eac84aea/b8c20d0f-f201-4fb8-8526-7726dc60489d/AZ-en-20221206-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-        width: 100%;
+        
+        .main-section{
+         
+            width: 100%;
         height: 780px;
         object-fit: cover;
         display: flex;
             align-items: center;
             justify-content: center;
             .description{
+                padding-bottom: 50px;
                 text-align: center;
                 position: static;
                     z-index: 100;
@@ -40,6 +44,38 @@
                 
                 
             }
+        }
+            
         
+    }
+}
+
+@media(max-width:768px){
+    .section{
+        .background-image{
+            .main-section{
+                .description{
+                    width: 70%;
+                    .title{
+                        font-size: 28px;
+                    }
+                    .command-tag{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:480px){
+    .section{
+        .background-image{
+            .main-section{
+                .description{
+                    width: 90%;
+                }
+            }
+        }
     }
 }

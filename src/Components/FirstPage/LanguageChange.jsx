@@ -1,5 +1,6 @@
 import React from 'react'
 import LanguageIcon from '@mui/icons-material/Language';
+import "../../styles/Footer/LanguageChange.scss"
 const LanguageChange = () => {
   return (
     <div className='select'>
