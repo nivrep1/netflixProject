@@ -11,7 +11,7 @@ const ButtonEmail = () => {
             membership.
           </p>
       <TextField
-        style={{ width: "55%" }}
+        style={{ width: "55%"}}
         required
         InputLabelProps={{ style: { color: "#8c8c8c" } }}
         sx={{ border: "none", backgroundColor: "#fff" }}

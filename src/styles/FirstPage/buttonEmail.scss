@@ -1,3 +1,5 @@
+
+
 .button-email{
     text-align: center;
     .text{
@@ -34,3 +36,28 @@
     }
 }
 
+
+
+@media(max-width:768px){
+    .button{
+        display: flex;
+        flex-wrap: wrap;
+        .button-email{
+            .text{
+                font-size: 23px;
+            }
+            .textField{
+                width: 85% !important;
+            }
+            .get-started{
+                height: 50px;
+                width: 140px;
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+@media(max-width:480px){
+      
+}
