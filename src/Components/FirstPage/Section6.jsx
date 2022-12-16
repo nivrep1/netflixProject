@@ -11,7 +11,7 @@ const Section6 = () => {
   return (
     <div className="section-accordion bg-black">
       <h2>Frequently Asked Questions</h2>
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion" style={{ marginBottom: "10px"}}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -22,7 +22,7 @@ const Section6 = () => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography style={{ fontSize: "26px" }}>What is Netflix</Typography>
+          <Typography className="accardion-child" style={{ fontSize: "26px" }}>What is Netflix</Typography>
         </AccordionSummary>
         <AccordionDetails
           style={{ backgroundColor: "#303030", color: "white" }}
@@ -37,7 +37,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>{" "}
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion"  style={{ marginBottom: "10px" }}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -68,7 +68,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>{" "}
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion"  style={{ marginBottom: "10px" }}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -102,7 +102,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>{" "}
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion"  style={{ marginBottom: "10px" }}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -130,7 +130,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>{" "}
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion"  style={{ marginBottom: "10px" }}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -159,7 +159,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>{" "}
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion"  style={{ marginBottom: "10px" }}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -189,7 +189,7 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ marginBottom: "10px" }}>
+      <Accordion className="accordion"  style={{ marginBottom: "10px" }}>
         <AccordionSummary
           style={{
             backgroundColor: "#303030",
@@ -215,7 +215,9 @@ const Section6 = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <ButtonEmail/>
+      <div className="button">
+          <ButtonEmail/>
+          </div>
     </div>
   );
 };

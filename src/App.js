@@ -12,15 +12,12 @@ import SignUp from "./Pages/SignUp";
 import Account from "./Pages/Account";
 import ProtectorRoute from "./Components/ProtectorRoute";
 import Head from "./Components/Header/Head";
-
 import FirstPage from "./Pages/FirstPage";
 
 function App() {
   return (
     <>
       <div className="relative h-screen  lg:h-[140vh]">
-      
-
         <Routes>
           <Route
             path="/"

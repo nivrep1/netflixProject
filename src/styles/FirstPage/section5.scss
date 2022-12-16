@@ -1,22 +1,61 @@
 .section-kids {
   border-bottom: 8px solid #222;
   align-items: center;
-  padding: 45px 70px;
+  padding: 50px 5%;
   .kids {
     width: 50%;
+    img{
+      width: 100%;
+    }
+
   }
   .description-kids {
     width: 50%;
+    padding: 0 5%;
     h2 {
       color: white;
       font-size: 40px;
       margin-bottom: 1.5rem;
+      line-height: 1.3;
     }
     p {
-      width: 90%;
+      // width: 90%;
+      line-height: 1.3;
       font-size: 1.625rem;
       font-weight: 400;
       color: white;
+    }
+  }
+}
+
+
+@media(max-width:768px){
+  .section-kids {
+    display: flex;
+    flex-direction: column-reverse;
+    .kids {
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    .description-kids {
+      width: 95%;
+      text-align: center;
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@media(max-width:480px){
+  .section-kids {
+    .description-kids {
+      h2 {
+       font-size: 1.625rem;
+       font-weight: 700;
+      }
     }
   }
 }

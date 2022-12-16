@@ -4,7 +4,7 @@ import "../../styles/Footer/Footer.scss";
 
 const Footer = () => {
   return (
-    <div className="footer bg-black">
+    <div className="footer">
       <h1>
         <a href="#">Questions?Contact us.</a>
       </h1>
