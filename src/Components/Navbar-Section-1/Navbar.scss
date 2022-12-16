@@ -28,8 +28,6 @@
         }
         .button{
             margin-left: 20px;
-          
-            
             display: flex;
             align-items: center;
             justify-content: center;
@@ -42,4 +40,28 @@
         }
     }
 
+}
+
+@media(max-width:480px){
+    .section-navbar{
+        .right-navbar{
+            .select{
+                select{
+                    padding: 6px 12px;
+                    position: relative;
+                }
+                .icon{
+                    padding-right: 5px;
+                    top: 24px;
+                    // left: 15px;
+                    height:15px;
+                }
+            }
+            .button{
+                a{
+                        padding: 0.25rem 0.5rem;
+                }
+            }
+        }
+    }
 }

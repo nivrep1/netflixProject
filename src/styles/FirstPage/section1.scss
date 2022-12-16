@@ -1,81 +1,77 @@
+.section {
+  position: relative;
+  border-bottom: 8px solid #222;
+  .color-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0,
+      transparent 60%,
+      rgba(0, 0, 0, 0.8)
+    );
+  }
+  .background-image {
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ac9aedf1-a687-4c5d-965c-2fc3eac84aea/b8c20d0f-f201-4fb8-8526-7726dc60489d/AZ-en-20221206-popsignuptwoweeks-perspective_alpha_website_large.jpg);
 
-.section{
-    position: relative;
-    border-bottom: 8px solid #222;
-    .color-background{ 
-        position: absolute; 
-        top: 0; 
-        width: 100%; 
-        height: 100%; 
-        background: rgba(0,0,0,.4);
-        background-image: linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8));
-
+    .main-section {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .description {
+        text-align: center;
+        position: static;
+        z-index: 100;
+        width: 45%;
+        .title {
+          font-weight: 800;
+          line-height: 1.2;
+          color: white;
+          font-size: 48px;
+        }
+        .command-tag {
+          margin-top: 12px;
+          font-weight: 400;
+          font-size: 26px;
+          color: #fff;
+        }
       }
-    .background-image{
-        background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ac9aedf1-a687-4c5d-965c-2fc3eac84aea/b8c20d0f-f201-4fb8-8526-7726dc60489d/AZ-en-20221206-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-        
-        .main-section{
-         
-            width: 100%;
-        height: 780px;
-        object-fit: cover;
-        display: flex;
-            align-items: center;
-            justify-content: center;
-            .description{
-                padding-bottom: 50px;
-                text-align: center;
-                position: static;
-                    z-index: 100;
-                    width: 45%;
-                .title{
-                    font-weight: 800;
-                    line-height: 1.2;
-                    color: white;
-                    font-size: 48px;
-                    
-                }
-                .command-tag{
-                    margin-top: 12px;
-                    font-weight: 400;
-                    font-size: 26px;
-                    color: #fff;
-                }
-                
-                
-            }
-        }
-            
-        
     }
+  }
 }
 
-@media(max-width:768px){
-    .section{
-        .background-image{
-            .main-section{
-                .description{
-                    width: 70%;
-                    .title{
-                        font-size: 28px;
-                    }
-                    .command-tag{
-                        font-size: 18px;
-                    }
-                }
-            }
+@media (max-width: 768px) {
+  .section {
+    .background-image {
+      .main-section {
+        .description {
+          width: 70%;
+          .title {
+            font-size: 28px;
+          }
+          .command-tag {
+            font-size: 18px;
+          }
         }
+      }
     }
+  }
 }
 
-@media(max-width:480px){
-    .section{
-        .background-image{
-            .main-section{
-                .description{
-                    width: 90%;
-                }
-            }
+@media (max-width: 480px) {
+  .section {
+    .background-image {
+      .main-section {
+        .description {
+          width: 90%;
         }
+      }
     }
+  }
 }

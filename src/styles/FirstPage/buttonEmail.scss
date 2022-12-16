@@ -59,5 +59,14 @@
 }
 
 @media(max-width:480px){
-      
+    .button{
+        .button-email{
+            .text{
+                padding: 0 5%;
+            }
+            .textField{
+                width: 95% !important;
+            }
+        }
+    }
 }

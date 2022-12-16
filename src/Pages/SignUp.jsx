@@ -4,6 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 import TextField from "@mui/material/TextField";
 import "../index.css";
 import Footer from "../Components/Footer/Footer";
+import LogoLogin from "../Components/LoginNavbar/LogoLogin";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -30,6 +31,7 @@ const SignUp = () => {
       />
       <div className="bg-black/60 fixed top-0 left-0 w-full h-screen"></div>
       <div className="relative  w-full px-4 py-24 z-50">
+      <LogoLogin/>
         <div className="max-w-[500px] h-[660px] mx-auto bg-black/75 text-white">
           <div className="max-w-[350px]  mx-auto py-16">
             <h1 className="text-3xl font-bold ">Sign Up</h1>
