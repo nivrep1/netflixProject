@@ -4,15 +4,14 @@ export const favoriteList = createSlice({
   initialState: {
     list: [
       {
-        id: 724495,
-        title: "The Woman King",
-        youtubeKey: "3RDaPV_rJ1Y",
+        id: 672,
+        title: "Harry Potter and the Chamber of Secrets",
+        youtubeKey: "1bq0qff4iF8",
         age_restriction: "16+",
         description:
-          "The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen, and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life.",
-        release_date: "2022-09-15",
-        vote_average: 7.863,
-        posterPath: "/lQMJHnHxUyj8kJlC2YOKNuzuwMP.jpg",
+          "Cars fly, trees fight back, and a mysterious house-elf comes to warn Harry Potter at the start of his second year at Hogwarts. Adventure and danger await when bloody writing on a wall announces: The Chamber Of Secrets Has Been Opened. To save Hogwarts will require all of Harry, Ron and Hermione’s magical abilities and courage.",
+        release_date: "2002-11-13",
+        posterPath: "/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
       },
     ],
   },

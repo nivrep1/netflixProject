@@ -3,8 +3,8 @@ import requests from "../Requests";
 import axios from "axios";
 import Row from "../Components/Row";
 import ContentPopup from "../Components/ContentPopup";
-import "../styles/Main.scss";
 import Footer from "../Components/Footer/Footer";
+import "../styles/Main.scss";
 
 const Movies = () => {
   //Main page Random Image Generator
@@ -36,34 +36,27 @@ const Movies = () => {
   return (
     <>
       <div className="main">
-        <div className="w-full h-full ">
-          {/* Gradient Background Image */}
-          <div className="background   bg-gradient-to-r from-black"></div>
+        {/* Gradient Background Image */}
+        <div className="background"></div>
 
-          {/* Main Page Random Film Images */}
-          <img
-            className="main-picture"
-            src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-            alt={movie?.title}
-          />
+        {/* Main Page Random Film Images */}
+        <img
+          className="main-picture"
+          src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+          alt={movie?.title}
+        />
+        {/*Movie Description && Buttons(Home page)  */}
+        <div className="description">
+          <h2>
+            {movie?.title}
+            {movie?.name}
+          </h2>
+          <div className="my-4"></div>
 
-          {/*Movie Description && Buttons(Home page)  */}
-          <div className="description  md:p-8">
-            <h1 className="text-3xl w-6/12 md:text-5xl font-bold">
-              {movie?.name}
-              {movie?.title}
-            </h1>
-            <div className="my-4"></div>
-            <p className="text-gray-400 text-sm">
-              Released:{movie?.release_date}
-            </p>
-
-            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 text-xl">
-              {trunCateString(movie?.overview, 200)}
-            </p>
-          </div>
+          <p className="w-full  lg:max-w-[50%]  md:max-w-[50%] text-gray-200 text-xl">
+            {trunCateString(movie?.overview, 150)}
+          </p>
         </div>
-        <Footer />
       </div>
 
       <ContentPopup />
@@ -73,6 +66,7 @@ const Movies = () => {
         fetchURL={requests.requestNetflixOriginals}
       />
       <Row title="Trend All Week" fetchURL={requests.requestTrendAllWeek} />
+      <Footer/>
     </>
   );
 };

@@ -9,12 +9,13 @@
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   overflow-y: auto;
+  border-radius: 55px;
   .contend {
     position: absolute;
     width: 70%;
     top: 20%;
     background-color: #141414;
-    padding: 30px;
+
     z-index: 1000;
     border-radius: 0.5em;
     color: #fff;
@@ -41,20 +42,24 @@
     align-items: center;
     width: 100%;
     .img-box {
-      width: 252px;
-      height: 378px;
+      width: 100%;
+      height: 100%;
       margin-bottom: 15px;
       img {
         border-radius: 3%;
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
     }
     .swiper-button-prev,
     .swiper-button-next {
-      color: rgb(218, 215, 215);
+      color: rgb(241, 239, 239);
       opacity: 0.4;
       font-size: bold;
     }
   }
+}
+
+@media (max-width: 768px) {
 }

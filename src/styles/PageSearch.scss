@@ -25,3 +25,12 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .main {
+    margin-top: 5rem;
+    .mg-box {
+      flex-wrap: wrap;
+    }
+  }
+}
