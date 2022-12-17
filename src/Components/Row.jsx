@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar } from "swiper";
+import { FreeMode, Navigation, Pagination, Scrollbar } from "swiper";
 //Style
 import "../../src/index.css";
 import "../styles/Row.scss";
@@ -81,19 +81,34 @@ const Row = ({ title, fetchURL }) => {
   return (
     <>
       <div className="container">
-        <h2 className=" md:text-xl p-2 pt-10  ">{title}</h2>
+        <h2 className="p-2 pt-10  ">{title}</h2>
         <div className="slide">
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar]}
-            spaceBetween={5}
+            freeMode={true}
+            grabCursor={true}
+            modules={[Navigation, Pagination, Scrollbar, FreeMode]}
             slidesPerView={5}
             loop={true}
             navigation={{ clickable: true }}
             scrollbar={{ draggable: true }}
+            breakpoints={{
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+              },
+            }}
           >
             {movies.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="img-box">
+                <div className="img-box ">
                   <img
                     onClick={(click) => {
                       selectObject(item.id, item.media_type);

@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 import "../../styles/Header/navbar.scss";
 
 const Navbar = () => {
-  
-
-  
   return (
-
-<div className="nav">
+    <div className="nav">
       <ul>
         <li className="headerLink ">
           <Link to="/">Home</Link>
@@ -27,7 +23,6 @@ const Navbar = () => {
         </li>
       </ul>
     </div>
-    
   );
 };
 

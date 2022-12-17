@@ -21,7 +21,7 @@ const Home = () => {
       })
       .then((response) => {
         setMovies(response.data.results);
-        response.data.results.filter((item) => item.backdrop_path != null)
+        response.data.results.filter((item) => item.backdrop_path != null);
       });
   }, []);
 
@@ -46,14 +46,14 @@ const Home = () => {
         alt={movie?.title}
       />
       {/*Movie Description && Buttons(Home page)  */}
-      <div className="description  md:p-8">
-        <h2 className="text-3xl w-6/12 md:text-5xl font-bold">
+      <div className="description">
+        <h2 >
           {movie?.title}
           {movie?.name}
         </h2>
         <div className="my-4"></div>
 
-        <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 text-xl">
+        <p className="w-full  lg:max-w-[50%]  md:max-w-[50%] text-gray-200 text-xl">
           {trunCateString(movie?.overview, 150)}
         </p>
       </div>

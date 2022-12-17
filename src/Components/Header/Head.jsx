@@ -7,9 +7,8 @@ import { UserAuth } from "../../context/AuthContext";
 
 import { useNavigate } from "react-router";
 
-
 const Head = (queryValue) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleFirstPage = async () => {
     try {
       await logOut();
@@ -37,8 +36,6 @@ const Head = (queryValue) => {
     };
     window.addEventListener("scroll", handleScroll);
 
-   
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -58,17 +55,17 @@ const Head = (queryValue) => {
             </div>
           </div>
         </header>
-      ) : <header>
+      ) : (
+        <header>
           <div className="container">
             <div className="nav">
               <div className="lobar">
-              <Logo onClick={handleFirstPage}/>
-               
+                <Logo onClick={handleFirstPage} />
               </div>
-           
             </div>
           </div>
-        </header>}
+        </header>
+      )}
     </div>
   );
 };
