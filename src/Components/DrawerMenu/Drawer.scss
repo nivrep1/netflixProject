@@ -1,0 +1,30 @@
+.burger {
+  display: none;
+  .box {
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 100%;
+  }
+}
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+  background-color: #eab121;
+}
+
+@media (max-width: 780px) {
+  .burger {
+    display: block;
+    .box {
+      // .nav {
+      //   width: 100%;
+      //   height: 100%;
+      //   ul {
+      //     display: flex;
+      //     flex-direction: column;
+      //   }
+      // }
+    }
+  }
+}

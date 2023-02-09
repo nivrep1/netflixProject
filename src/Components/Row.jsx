@@ -92,6 +92,11 @@ const Row = ({ title, fetchURL }) => {
             navigation={{ clickable: true }}
             scrollbar={{ draggable: true }}
             breakpoints={{
+              360: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+
               480: {
                 slidesPerView: 2,
                 spaceBetween: 10,

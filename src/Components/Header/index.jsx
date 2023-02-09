@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 import Search from "./SearchBox";
-import "../../styles/Header/head.scss";
+import "../../styles/Header/index.scss";
 import { UserAuth } from "../../context/AuthContext";
-
 import { useNavigate } from "react-router";
+import BurgerMenu from "../DrawerMenu/BurgerMenu";
 
 const Head = (queryValue) => {
   const navigate = useNavigate();
@@ -49,6 +49,7 @@ const Head = (queryValue) => {
             <div className="nav">
               <div className="lobar">
                 <Logo onClick={refreshPage} />
+                <BurgerMenu/>
                 <Navbar />
               </div>
               <Search />

@@ -11,7 +11,7 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import Account from "./Pages/Account";
 import ProtectorRoute from "./Components/ProtectorRoute";
-import Head from "./Components/Header/Head";
+import Header from "./Components/Header";
 import FirstPage from "./Pages/FirstPage";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
             path="/"
             element={
               <ProtectorRoute>
-              <Head/>
+                <Header />
                 <Home />
               </ProtectorRoute>
             }
@@ -32,7 +32,7 @@ function App() {
             path="/movies"
             element={
               <ProtectorRoute>
-              <Head/>
+                <Header />
                 <Movies />
               </ProtectorRoute>
             }
@@ -41,7 +41,7 @@ function App() {
             path="/tvShows"
             element={
               <ProtectorRoute>
-              <Head/>
+                <Header />
                 <TvShows />
               </ProtectorRoute>
             }
@@ -50,7 +50,7 @@ function App() {
             path="/newPopular"
             element={
               <ProtectorRoute>
-              <Head/>
+                <Header />
                 <NewPopular />
               </ProtectorRoute>
             }
@@ -59,7 +59,7 @@ function App() {
             path="/myList"
             element={
               <ProtectorRoute>
-              <Head/>
+                <Header />
                 <MyList />
               </ProtectorRoute>
             }
@@ -68,7 +68,7 @@ function App() {
             path="/search"
             element={
               <ProtectorRoute>
-              <Head/>
+                <Header />
                 <SearchMovie />
               </ProtectorRoute>
             }
