@@ -47,7 +47,7 @@ const Home = () => {
       />
       {/*Movie Description && Buttons(Home page)  */}
       <div className="description">
-        <h2 >
+        <h2>
           {movie?.title}
           {movie?.name}
         </h2>
